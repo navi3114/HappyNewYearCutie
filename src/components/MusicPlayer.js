@@ -10,74 +10,78 @@ const MusicPlayer = () => {
   const location = useLocation();
   const hasAttemptedAutoplay = useRef(false);
 
-  // Map routes to different songs
+  // Map routes to different songs (null means no music for that page)
   const songs = {
-    '/': '/music/landing.mp3',           // Landing page song
-    '/story': '/music/story.mp3',        // Our Story page song
-    '/gallery': '/music/gallery.mp3',    // Gallery page song
-    '/words': '/music/words.mp3',        // My Words page song
-    '/reasons': '/music/reasons.mp3',    // Reasons page song
-    '/surprise': '/music/surprise.mp3',  // Surprise page song
+    '/': null,                                                     // Landing page - no music
+    '/story': `${process.env.PUBLIC_URL}/music/story.mp3`,        // Our Story page song
+    '/gallery': `${process.env.PUBLIC_URL}/music/gallery.mp3`,    // Gallery page song
+    '/words': `${process.env.PUBLIC_URL}/music/words.mp3`,        // My Words page song
+    '/reasons': `${process.env.PUBLIC_URL}/music/reasons.mp3`,    // Reasons page song
+    '/surprise': null,                                             // Surprise page - no music
   };
 
   // Get current song based on route
-  const currentSong = songs[location.pathname] || songs['/'];
+  const currentSong = songs[location.pathname];
+  const hasMusicOnCurrentPage = currentSong !== null && currentSong !== undefined;
 
   // Auto-play on initial load
   useEffect(() => {
-    if (!hasAttemptedAutoplay.current && audioRef.current) {
+    if (!hasAttemptedAutoplay.current && audioRef.current && hasMusicOnCurrentPage) {
       hasAttemptedAutoplay.current = true;
       
-      // Try autoplay after a short delay
+      // Try autoplay immediately and on interaction
       const attemptAutoplay = () => {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(() => {
-          // Autoplay blocked - common on mobile browsers
-          // Music will start when user interacts with the page
-          setIsPlaying(false);
-        });
-      };
-      
-      // For mobile, wait for first user interaction
-      const startOnFirstInteraction = () => {
-        if (audioRef.current && !isPlaying) {
+        if (audioRef.current && audioRef.current.paused) {
           audioRef.current.play().then(() => {
             setIsPlaying(true);
-          }).catch(() => {});
+          }).catch((error) => {
+            console.log('Autoplay prevented:', error);
+            setIsPlaying(false);
+          });
         }
-        // Remove listeners after first attempt
-        document.removeEventListener('touchstart', startOnFirstInteraction);
-        document.removeEventListener('click', startOnFirstInteraction);
       };
       
-      setTimeout(attemptAutoplay, 500);
+      // Try immediate autoplay
+      setTimeout(attemptAutoplay, 200);
       
-      // Backup: start on user interaction
-      document.addEventListener('touchstart', startOnFirstInteraction, { once: true });
-      document.addEventListener('click', startOnFirstInteraction, { once: true });
+      // Also try on any user interaction
+      const startOnInteraction = (e) => {
+        attemptAutoplay();
+        document.removeEventListener('touchstart', startOnInteraction);
+        document.removeEventListener('click', startOnInteraction);
+        document.removeEventListener('keydown', startOnInteraction);
+      };
+      
+      document.addEventListener('touchstart', startOnInteraction, { once: true });
+      document.addEventListener('click', startOnInteraction, { once: true });
+      document.addEventListener('keydown', startOnInteraction, { once: true });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle song change when route changes
   useEffect(() => {
     if (audioRef.current && hasAttemptedAutoplay.current) {
-      const wasPlaying = isPlaying;
+      const wasPlaying = !audioRef.current.paused;
       audioRef.current.pause();
       audioRef.current.load();
       
-      if (wasPlaying) {
+      // Only play if the new page has music
+      if (wasPlaying && hasMusicOnCurrentPage) {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
         }).catch(() => {
           setIsPlaying(false);
         });
+      } else if (!hasMusicOnCurrentPage) {
+        setIsPlaying(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   const toggleMusic = () => {
-    if (audioRef.current) {
+    if (audioRef.current && hasMusicOnCurrentPage) {
       if (audioRef.current.paused) {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
@@ -90,6 +94,11 @@ const MusicPlayer = () => {
       }
     }
   };
+
+  // Don't show music player if current page has no music
+  if (!hasMusicOnCurrentPage) {
+    return null;
+  }
 
   return (
     <div className="music-player">

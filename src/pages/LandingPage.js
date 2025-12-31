@@ -11,7 +11,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <BackgroundImage imageSrc="/images/landing.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       <FloatingHearts />
       
       <motion.div

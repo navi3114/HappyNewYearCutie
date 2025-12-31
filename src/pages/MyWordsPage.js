@@ -67,7 +67,7 @@ itluuuu, ni yokka wastefellow💌
 
   return (
     <div className="words-page">
-      <BackgroundImage imageSrc="/images/words.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       <div className="falling-hearts-bg">
         {Array.from({ length: 10 }, (_, i) => (
           <div

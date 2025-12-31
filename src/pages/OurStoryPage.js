@@ -35,7 +35,7 @@ const OurStoryPage = () => {
 
   return (
     <div className="story-page">
-      <BackgroundImage imageSrc="/images/story.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       <motion.div
         className="story-header"
         initial={{ opacity: 0, y: -30 }}

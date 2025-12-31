@@ -12,49 +12,49 @@ const GalleryPage = () => {
   const photos = [
     {
       id: 1,
-      src: "/gallery/photo1.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo1.jpg`,
       caption: "Yr mottom chusthu undipochu💖",
     },
     {
       id: 2,
-      src: "/gallery/photo2.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo2.jpg`,
       caption: "Years's 2nd biggest achivement🙇",
     },
     {
       id: 3,
-      src: "/gallery/photo3.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo3.jpg`,
       caption: "Bondam and Me Thanks AI🔥💫",
     },
     {
       id: 4,
-      src: "/gallery/photo4.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo4.jpg`,
       caption: "Years's best one for me ✨",
     },
     {
       id: 5,
-      src: "/gallery/photo5.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo5.jpg`,
       caption: "Biggest adventure nuv scooty drive chestunnapudu nen venaka 🚳😨 kadhale Fun Fun",
     },
     {
       id: 6,
-      src: "/gallery/photo6.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo6.jpg`,
       caption: "Nitho gadipina prathi moment, time kaadu memory ga maripothundi 💖",
     },
     {
       id: 7,
-      src: "/gallery/photo7.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo7.jpg`,
       caption: "Prathi glance lo oka feeling untundi. Adi calm ga, natural ga untundi. Chala special ga anipistundi💯",
     },
     {
       id: 8,
-      src: "/gallery/photo8.jpg",
+      src: `${process.env.PUBLIC_URL}/gallery/photo8.jpg`,
       caption: "Ee bus lo Best night asala  idhi year lo can't even forget it any upcoming years. Ahh visuals inka na munde unnai😩💌",
     },
   ];
 
   return (
     <div className="gallery-page">
-      <BackgroundImage imageSrc="/images/gallery.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       <motion.div
         className="gallery-header"
         initial={{ opacity: 0, y: -30 }}

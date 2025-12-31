@@ -77,7 +77,7 @@ const ReasonsPage = () => {
 
   return (
     <div className="reasons-page">
-      <BackgroundImage imageSrc="/images/reasons.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       <motion.div
         className="reasons-header"
         initial={{ opacity: 0, y: -30 }}

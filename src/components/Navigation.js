@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaHeart, FaImages, FaEnvelope, FaStar, FaGift } from 'react-icons/fa';
+import { FaHome, FaHeart, FaImages, FaEnvelope, FaStar, FaStickyNote } from 'react-icons/fa';
 import './Navigation.css';
 
 // Cute floating navigation bar
@@ -11,7 +11,7 @@ const Navigation = () => {
     { path: '/words', icon: <FaEnvelope />, label: 'My Words' },
     { path: '/reasons', icon: <FaStar />, label: 'Reasons' },
     { path: '/gallery', icon: <FaImages />, label: 'Gallery' },
-    { path: '/surprise', icon: <FaGift />, label: 'Surprise' },
+    { path: '/surprise', icon: <FaStickyNote />, label: 'Note' },
   ];
 
   return (

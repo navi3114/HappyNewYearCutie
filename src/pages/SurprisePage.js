@@ -24,7 +24,7 @@ const SurprisePage = () => {
 
   return (
     <div className="surprise-page">
-      <BackgroundImage imageSrc="/images/surprise.jpg" opacity={0.15} />
+      <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
       {showConfetti && (
         <Confetti
           width={width}

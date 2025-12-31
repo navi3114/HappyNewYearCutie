@@ -126,7 +126,7 @@
 
 .door-instruction {
   position: absolute;
-  bottom: -120px;
+  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Poppins', sans-serif;

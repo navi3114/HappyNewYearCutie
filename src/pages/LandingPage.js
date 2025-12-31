@@ -7,6 +7,31 @@ import FloatingHearts from '../components/FloatingHearts';
 import BackgroundImage from '../components/BackgroundImage';
 import './LandingPage.css';
 
+// Typing effect component
+const TypewriterText = ({ text, delay = 0, speed = 50 }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const startTimeout = setTimeout(() => {
+      if (currentIndex < text.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(prev => prev + text[currentIndex]);
+          setCurrentIndex(prev => prev + 1);
+        }, speed);
+        return () => clearTimeout(timeout);
+      }
+    }, delay);
+    return () => clearTimeout(startTimeout);
+  }, [currentIndex, text, delay, speed]);
+
+  return (
+    <span style={{ whiteSpace: 'pre-wrap' }}>
+      {displayedText}
+    </span>
+  );
+};
+
 // Landing page with cute intro animation
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -80,17 +105,20 @@ const LandingPage = () => {
           Happy New Year Bhavyasriiiiiiii 💕
         </motion.h1>
 
-        <motion.p
-          className="landing-subtitle"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+        <motion.div
+          className="landing-subtitle-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
         >
-          This year became magical because of you ✨
-          Ee samvatsaram oka gurthundipoye katha 
-          Daaniki kaaranam nuvve
-          Eppatiki marchipolenu 💌
-        </motion.p>
+          <div className="landing-subtitle-special">
+            This year became magical because of you
+            <br />
+            Ee year na life lo chala special ayipoyindi.
+            <br />
+            Daaniki one of the main reason nuvve💯
+          </div>
+        </motion.div>
 
         <motion.button
           className="enter-button"

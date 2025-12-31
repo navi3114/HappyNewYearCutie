@@ -46,6 +46,33 @@
   font-weight: 300;
 }
 
+.landing-subtitle-container {
+  margin-bottom: 40px;
+}
+
+.landing-subtitle-special {
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-size: 1.9rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.8;
+  margin: 8px 0;
+  display: block;
+  text-shadow: 
+    0 0 15px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 0, 0, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 .enter-button {
   font-family: 'Poppins', sans-serif;
   font-size: 1.3rem;
@@ -94,6 +121,7 @@
   display: flex;
   justify-content: center;
   gap: 2px;
+  pointer-events: none;
 }
 
 .door-instruction {
@@ -298,6 +326,11 @@
 
   .landing-subtitle {
     font-size: 1.2rem;
+  }
+
+  .landing-subtitle-special {
+    font-size: 1.5rem;
+    margin: 6px 0;
   }
 
   .enter-button {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
 import BackgroundImage from '../components/BackgroundImage';
@@ -7,6 +7,7 @@ import './GalleryPage.css';
 // Gallery page with lightbox
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
 
   // Gallery photos - stored in public/gallery folder
   const photos = [
@@ -52,6 +53,17 @@ const GalleryPage = () => {
     },
   ];
 
+  // Preload images progressively
+  useEffect(() => {
+    photos.forEach((photo) => {
+      const img = new Image();
+      img.src = photo.src;
+      img.onload = () => {
+        setLoadedImages(prev => ({ ...prev, [photo.id]: true }));
+      };
+    });
+  }, []);
+
   return (
     <div className="gallery-page">
       <BackgroundImage imageSrc="/images/her-photo.jpg" opacity={0.15} />
@@ -78,7 +90,20 @@ const GalleryPage = () => {
             onClick={() => setSelectedImage(photo)}
           >
             <div className="image-container">
-              <img src={photo.src} alt={photo.caption} />
+              <img 
+                src={photo.src} 
+                alt={photo.caption}
+                loading="lazy"
+                style={{
+                  opacity: loadedImages[photo.id] ? 1 : 0,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
+              />
+              {!loadedImages[photo.id] && (
+                <div className="image-placeholder">
+                  <div className="loading-spinner"></div>
+                </div>
+              )}
               <div className="image-overlay">
                 <div className="heart-icon">💕</div>
               </div>
@@ -108,7 +133,11 @@ const GalleryPage = () => {
               <button className="close-button" onClick={() => setSelectedImage(null)}>
                 <FaTimes />
               </button>
-              <img src={selectedImage.src} alt={selectedImage.caption} />
+              <img 
+                src={selectedImage.src} 
+                alt={selectedImage.caption}
+                loading="eager"
+              />
               <p className="lightbox-caption">{selectedImage.caption}</p>
             </motion.div>
           </motion.div>

@@ -121,6 +121,54 @@
   font-weight: 400;
 }
 
+.highlighted-text {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #fce4ec 100%);
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 600;
+  color: #c2185b;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+  border: 2px solid #f48fb1;
+  animation: pulse-highlight 2s ease-in-out infinite;
+  margin: 10px 0;
+}
+
+@keyframes pulse-highlight {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(233, 30, 99, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+.highlighted-text-blue {
+  background: linear-gradient(135deg, #e3f2fd 0%, #64b5f6 50%, #e3f2fd 100%);
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 600;
+  color: #1565c0;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  border: 2px solid #42a5f5;
+  animation: pulse-highlight-blue 2s ease-in-out infinite;
+  margin: 10px 0;
+}
+
+@keyframes pulse-highlight-blue {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(33, 150, 243, 0.6);
+    transform: scale(1.02);
+  }
+}
+
 .floating-emojis {
   font-size: 40px;
   margin-top: 40px;
@@ -169,6 +217,16 @@
 
   .final-message {
     font-size: 1.1rem;
+  }
+
+  .highlighted-text {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+
+  .highlighted-text-blue {
+    font-size: 1rem;
+    padding: 12px 15px;
   }
 
   .floating-emojis {

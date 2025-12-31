@@ -128,7 +128,17 @@ const SurprisePage = () => {
               </motion.span>
             </div>
             <p className="final-message">
-              Nuv em taggoddhu 😭 🥂
+             Oye Bhavyasrii Before the year ends and with year starting I want to say
+              <br />
+              <span className="highlighted-text">
+                Sorry for all the things which hurted you because of me cutie, nuv hurt avvav ani telsu endukante nen alanti panulu cheyanu kadhaaaaa....!! but yeppudaina hurt ayyi unte sorryyyy bhavyasrii. Tappu evardaina gap iddari madhya perigiddi. Adhi na valla kadhu.
+              </span>
+              <br /><br />
+              <span className="highlighted-text-blue">
+                Ninnu intha ga istapade vallu evaraina unnara ante yess unnadu ani cheppuko! Unna kadha
+              </span>
+              <br /><br />
+              Also bhavyasrii nuv taggodhuuu plsss😩
               <br />
               Addam mundi ki velli chudu yentha cute untavo. Pics ki kavali ante B612 undi ga  💕
             </p>

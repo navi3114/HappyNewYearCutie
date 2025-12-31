@@ -1,0 +1,230 @@
+.reasons-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff0f6 0%, #fce7f3 50%, #fef3f9 100%);
+  padding: 80px 20px 120px 20px;
+}
+
+.reasons-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.reasons-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+}
+
+.reasons-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #d946ef;
+  font-weight: 300;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reason-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+  transition: all 0.3s ease;
+  border: 3px solid var(--card-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.reason-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--card-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.reason-card:hover::before {
+  opacity: 0.1;
+}
+
+.reason-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-icon {
+  font-size: 40px;
+  color: var(--card-color);
+  margin-bottom: 15px;
+}
+
+.card-emoji {
+  font-size: 50px;
+  margin-bottom: 15px;
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 300;
+}
+
+/* Modal */
+.reason-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 30px;
+  padding: 50px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.modal-emoji {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: rotate-scale 1s ease-in-out;
+}
+
+@keyframes rotate-scale {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.modal-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.modal-close {
+  font-family: 'Poppins', sans-serif;
+  padding: 12px 30px;
+  background: white;
+  color: #ff69b4;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .reasons-page {
+    padding: 60px 15px 120px 15px;
+  }
+
+  .reasons-title {
+    font-size: 2rem;
+  }
+
+  .reasons-subtitle {
+    font-size: 1rem;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .reason-card {
+    padding: 20px;
+  }
+
+  .card-emoji {
+    font-size: 40px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-content {
+    padding: 30px;
+  }
+
+  .modal-emoji {
+    font-size: 60px;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal-message {
+    font-size: 1rem;
+  }
+}

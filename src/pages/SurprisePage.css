@@ -1,0 +1,178 @@
+.surprise-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffeef8 0%, #e7d4f7 25%, #ffd6e8 50%, #f8d7ff 75%, #ffe5f3 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.surprise-container {
+  text-align: center;
+  max-width: 700px;
+  z-index: 10;
+}
+
+.surprise-hearts {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.surprise-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.3);
+  line-height: 1.3;
+}
+
+.surprise-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #d946ef;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.surprise-message {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+.surprise-message p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #666;
+  margin: 15px 0;
+  font-weight: 400;
+}
+
+.surprise-button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px 50px;
+  background: linear-gradient(135deg, #ff6b9d, #ffa6c9);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.surprise-button:hover {
+  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.6);
+  transform: translateY(-3px);
+}
+
+.response-message {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+}
+
+.response-message h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.celebration-emojis {
+  font-size: 60px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.celebration-emojis span {
+  display: inline-block;
+}
+
+.final-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: #d946ef;
+  margin-top: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.floating-emojis {
+  font-size: 40px;
+  margin-top: 40px;
+  letter-spacing: 20px;
+}
+
+@media (max-width: 768px) {
+  .surprise-hearts {
+    font-size: 40px;
+  }
+
+  .surprise-title {
+    font-size: 2.2rem;
+  }
+
+  .surprise-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .surprise-message {
+    padding: 20px;
+  }
+
+  .surprise-message p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+
+  .surprise-button {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+  }
+
+  .response-message {
+    padding: 30px 20px;
+  }
+
+  .response-message h2 {
+    font-size: 2rem;
+  }
+
+  .celebration-emojis {
+    font-size: 45px;
+    gap: 15px;
+  }
+
+  .final-message {
+    font-size: 1.1rem;
+  }
+
+  .floating-emojis {
+    font-size: 30px;
+    letter-spacing: 15px;
+  }
+}

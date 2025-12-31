@@ -1,0 +1,127 @@
+.story-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff0f6 0%, #fce7f3 50%, #fdf2f8 100%);
+  padding: 80px 20px 120px 20px;
+}
+
+.story-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.story-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+}
+
+.story-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #d946ef;
+  font-weight: 300;
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.timeline-content {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+  border-left: 5px solid;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+}
+
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.timeline-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.story-footer {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.footer-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: #ff85a1;
+  text-shadow: 1px 1px 3px rgba(255, 105, 180, 0.3);
+}
+
+@media (max-width: 768px) {
+  .story-page {
+    padding: 60px 15px 120px 15px;
+  }
+
+  .story-title {
+    font-size: 2rem;
+  }
+
+  .story-subtitle {
+    font-size: 1rem;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .timeline-title {
+    font-size: 1.4rem;
+  }
+
+  .timeline-description {
+    font-size: 1rem;
+  }
+
+  .footer-text {
+    font-size: 1.5rem;
+  }
+}

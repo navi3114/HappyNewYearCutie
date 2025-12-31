@@ -83,8 +83,9 @@ const SurprisePage = () => {
         >
           <p>Nuvvu unna prathi roju oka gift 🎁</p>
           <p>Ni navvu oka silent happiness ✨</p>
-          <p>Mana moments anni heart lo permanent 💎</p>
-          <p>innu kalisi gadipina prathi moment priceless 🌍</p>
+          <p>Mana moments anni heart lo permanent ga untai💯</p>
+          <p>Nitho kalisi gadipina prathi moment priceless naku🙇</p>
+          <p>Idhi Sollu kadhu bhavyasri true idhi🫠</p>
         </motion.div>
 
         {!showConfetti ? (

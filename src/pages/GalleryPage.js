@@ -104,9 +104,6 @@ const GalleryPage = () => {
                   <div className="loading-spinner"></div>
                 </div>
               )}
-              <div className="image-overlay">
-                <div className="heart-icon">💕</div>
-              </div>
             </div>
             <p className="image-caption">{photo.caption}</p>
           </motion.div>

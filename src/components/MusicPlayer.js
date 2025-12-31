@@ -17,7 +17,7 @@ const MusicPlayer = () => {
     '/gallery': `${process.env.PUBLIC_URL}/music/gallery.mp3`,    // Gallery page song
     '/words': `${process.env.PUBLIC_URL}/music/words.mp3`,        // My Words page song
     '/reasons': `${process.env.PUBLIC_URL}/music/reasons.mp3`,    // Reasons page song
-    '/surprise': null,                                             // Surprise page - no music
+    '/surprise': `${process.env.PUBLIC_URL}/music/notes.mp3`,     // Note page song
   };
 
   // Get current song based on route

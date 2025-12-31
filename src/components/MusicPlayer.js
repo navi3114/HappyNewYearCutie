@@ -27,14 +27,35 @@ const MusicPlayer = () => {
   useEffect(() => {
     if (!hasAttemptedAutoplay.current && audioRef.current) {
       hasAttemptedAutoplay.current = true;
-      setTimeout(() => {
+      
+      // Try autoplay after a short delay
+      const attemptAutoplay = () => {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
         }).catch(() => {
-          // Autoplay blocked by browser
+          // Autoplay blocked - common on mobile browsers
+          // Music will start when user interacts with the page
           setIsPlaying(false);
         });
-      }, 100);
+      };
+      
+      // For mobile, wait for first user interaction
+      const startOnFirstInteraction = () => {
+        if (audioRef.current && !isPlaying) {
+          audioRef.current.play().then(() => {
+            setIsPlaying(true);
+          }).catch(() => {});
+        }
+        // Remove listeners after first attempt
+        document.removeEventListener('touchstart', startOnFirstInteraction);
+        document.removeEventListener('click', startOnFirstInteraction);
+      };
+      
+      setTimeout(attemptAutoplay, 500);
+      
+      // Backup: start on user interaction
+      document.addEventListener('touchstart', startOnFirstInteraction, { once: true });
+      document.addEventListener('click', startOnFirstInteraction, { once: true });
     }
   }, []);
 

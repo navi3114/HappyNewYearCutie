@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/HappyNewYearCutie/static/css/main.36272c18.css",
-    "main.js": "/HappyNewYearCutie/static/js/main.f517054a.js",
+    "main.css": "/HappyNewYearCutie/static/css/main.4c5cb8c5.css",
+    "main.js": "/HappyNewYearCutie/static/js/main.bc7e9ed3.js",
     "static/js/453.c3f5aaa4.chunk.js": "/HappyNewYearCutie/static/js/453.c3f5aaa4.chunk.js",
     "index.html": "/HappyNewYearCutie/index.html",
-    "main.36272c18.css.map": "/HappyNewYearCutie/static/css/main.36272c18.css.map",
-    "main.f517054a.js.map": "/HappyNewYearCutie/static/js/main.f517054a.js.map",
+    "main.4c5cb8c5.css.map": "/HappyNewYearCutie/static/css/main.4c5cb8c5.css.map",
+    "main.bc7e9ed3.js.map": "/HappyNewYearCutie/static/js/main.bc7e9ed3.js.map",
     "453.c3f5aaa4.chunk.js.map": "/HappyNewYearCutie/static/js/453.c3f5aaa4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36272c18.css",
-    "static/js/main.f517054a.js"
+    "static/css/main.4c5cb8c5.css",
+    "static/js/main.bc7e9ed3.js"
   ]
 }

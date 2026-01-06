@@ -188,7 +188,7 @@ const LandingPage = () => {
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                 >
                   <div className="door-panel">
-                    <div className="door-number">14</div>
+                    <div className="door-number">31</div>
                     <div className="door-knob"></div>
                     <div className="door-pattern">
                       <div className="pattern-line"></div>
@@ -203,7 +203,7 @@ const LandingPage = () => {
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                 >
                   <div className="door-panel">
-                    <div className="door-number">31</div>
+                    <div className="door-number">14</div>
                     <div className="door-knob"></div>
                     <div className="door-pattern">
                       <div className="pattern-line"></div>
